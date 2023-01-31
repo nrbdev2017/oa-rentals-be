@@ -11,18 +11,6 @@ jobs:
             - python/install-packages:
                 pkg-manager: pip
             - run:
-                name: Run tests
-                command: pytest
-            - run:
-                name: Show PWD
-                command: pwd
-            - run:
-                name: Show directory files and folders
-                command: ls -al
-            - run:
-                name: Run Coverage Raw
-                command: coverage
-            - run:
                 name: Run Coverage Raw
                 command: coverage run -m pytest 
             - run:
