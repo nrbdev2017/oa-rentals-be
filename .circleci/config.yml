@@ -19,6 +19,14 @@ jobs:
             - run:
                 name: Show directory files and folders
                 command: ls -al
+            - run:
+                name: Run Coverage Raw
+                command: coverage
+            - run:
+                name: Run Coverage Raw
+                command: coverage xml
+            - codecov/upload:
+                file: ./coverage.xml
 workflows:
     setup:
         jobs:
