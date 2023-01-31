@@ -1,0 +1,2 @@
+FLASK_APP=rentals.py
+FLASK_DEBUG=1

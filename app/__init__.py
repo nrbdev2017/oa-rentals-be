@@ -5,7 +5,6 @@ from .models import *
 
 
 def create_app(config_class=Config):
-    """Application Factory"""
     app = Flask(__name__)
     app.config.from_object(config_class)
 
