@@ -3,7 +3,7 @@ orbs:
     python: circleci/python@2.1.1
     codecov: codecov/codecov@3.2.3
 jobs:
-    build-and-test:
+    setups-and-test:
         docker:
             - image: cimg/python:3.11.0
         steps:
@@ -24,10 +24,13 @@ jobs:
                 command: coverage
             - run:
                 name: Run Coverage Raw
+                command: 
+            - run:
+                name: Run Coverage Raw
                 command: coverage xml
             - codecov/upload:
                 file: ./coverage.xml
 workflows:
     setup:
         jobs:
-            - build-and-test
+            - setups-and-test
