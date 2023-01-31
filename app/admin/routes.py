@@ -1,4 +1,4 @@
-from app.admin.controllers.admin_controller import get_admin_dashboard
+from app.admin.http.admin_handler import get_admin_dashboard
 
 from flask_restful import Resource, fields, marshal_with
 

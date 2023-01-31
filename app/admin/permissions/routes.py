@@ -1,4 +1,4 @@
-from app.admin.permissions.controllers.permission_controller import register_permission, get_permissions, \
+from app.admin.permissions.http.permission_handler import register_permission, get_permissions, \
     update_permission, get_system_permissions
 
 from flask_restful import Resource, fields, marshal_with
