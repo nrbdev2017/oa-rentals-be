@@ -1,0 +1,36 @@
+version: 2.1
+orbs:
+    python: circleci/python@2.1.1
+    codecov: codecov/codecov@3.2.3
+jobs:
+    build-and-test:
+        docker:
+            - image: cimg/python:3.11.0
+        steps:
+            - checkout
+            - python/install-packages:
+                pkg-manager: pip
+            - run:
+                name: Run tests
+                command: pytest
+            - run:
+                name: Show PWD
+                command: pwd
+            - run:
+                name: Show directory files and folders
+                command: ls -al
+            - run:
+                name: Run Coverage Raw
+                command: coverage
+            - run:
+                name: Run Coverage Raw
+                command: coverage run -m pytest 
+            - run:
+                name: Run Coverage Raw
+                command: coverage xml
+            - codecov/upload:
+                file: ./coverage.xml
+workflows:
+    setup:
+        jobs:
+            - build-and-test
