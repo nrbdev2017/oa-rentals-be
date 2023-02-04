@@ -11,7 +11,7 @@ from app.admin.routes import AdminAPI
 admin_bp = Blueprint('admin', __name__, url_prefix='/admin')
 
 # admin_bp.register_blueprint(auth_bp)
-# admin_bp.register_blueprint(permissions_bp)
+admin_bp.register_blueprint(permissions_bp)
 # admin_bp.register_blueprint(roles_bp)
 # admin_bp.register_blueprint(users_bp)
 

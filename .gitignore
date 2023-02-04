@@ -130,3 +130,6 @@ dmypy.json
 
 # Linux vim temp files
 *.swp
+
+# Personal Dev stuff
+ref/

@@ -1,11 +1,11 @@
-from app.admin.permissions.models.permission_model import PermissionModel
+from app.admin.permissions.application_services.permission_service import PermissionService
 from flask import request
 
 # from app.core.util.get_all_functions import get_all_functions
 
 
 def get_permissions():
-    return PermissionModel.get_permissions()
+    return PermissionService.get_all_permissions()
 
 
 def get_system_permissions():

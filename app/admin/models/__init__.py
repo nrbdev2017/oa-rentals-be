@@ -2,4 +2,4 @@
 # from ..users.models.user_roles import UserRole
 # from ..roles.models.role import Role
 # from ..users.models.user import User
-from ..permissions.models.permission import Permission
+from ..permissions.infra.models.permission_model import PermissionModel
