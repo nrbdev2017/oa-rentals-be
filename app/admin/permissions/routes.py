@@ -19,7 +19,6 @@ class PermissionsAPI(Resource):
     """Definition for endpoints for the Permissions SubModule"""
 
     @classmethod
-    @marshal_with(resource_fields)
     def get(cls):
         return get_permissions()
 
