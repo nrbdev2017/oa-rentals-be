@@ -1,7 +1,7 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from app.admin.permissions.domain.entities.permission import Permission
 
-class PermissionRepository(metaclass=ABCMeta):
+class PermissionRepositoryInterface(ABC):
     """An interface to permission repository"""
 
     @abstractmethod

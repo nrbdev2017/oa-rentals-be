@@ -1,13 +1,13 @@
 from sqlalchemy.orm import Session
-from domain.repositories import PermissionRepository
-from domain.entities import Permission
-from infrastructure.models import PermissionModel
-from infrastructure.data_mappers import perm_model_to_entity, perm_entity_to_model
+from ...domain.repos.permission_repository_interface import PermissionRepositoryInterface
+from ...domain.entities.permission import Permission
+from ..models.permission_model import PermissionModel
+from ..data_mappers.permission_data_mappers import perm_model_to_entity, perm_entity_to_model
 
 # a sentinel value for keeping track of entities removed from the repository
 REMOVED = object()
 
-class SAPermissionRepository(PermissionRepository):
+class SAPermissionRepository(PermissionRepositoryInterface):
     """SqlAlchemy implementation of PermissionRepository"""
 
     def __init__(self, session: Session, identity_map=None):
