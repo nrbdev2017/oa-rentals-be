@@ -9,10 +9,10 @@ class PermissionRepositoryInterface(ABC):
         """Adds new entity to a repository"""
         raise NotImplementedError()
 
-    @abstractmethod
-    def delete(self, entity: Permission):
-        """Removes existing entity from repository"""
-        raise NotImplementedError()
+    # @abstractmethod
+    # def delete(self, entity: Permission):
+    #     """Removes existing entity from repository"""
+    #     raise NotImplementedError()
 
     # @abstractmethod
     # def get_by_id(id: PermissionId) -> Permission:

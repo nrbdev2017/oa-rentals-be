@@ -10,11 +10,10 @@ REMOVED = object()
 class SAPermissionRepository(PermissionRepositoryInterface):
     """SqlAlchemy implementation of PermissionRepository"""
 
-    def __init__(self, session: Session, identity_map=None):
-        self.session = session
-        self._identity_map = identity_map or dict()
+    def __init__(self):
+        pass
 
-    def add(self, entity: Permission):
+    def add(self, permission: Permission):
         self._identity_map[entity.id] = entity
         instance = perm_entity_to_model(entity)
         self.session.add(instance)
@@ -24,6 +23,9 @@ class SAPermissionRepository(PermissionRepositoryInterface):
         self._identity_map[entity.id] = REMOVED
         perm_model = self.session.query(PermissionModel).get(entity.id)
         self.session.delete(perm_model)
+
+    def get_all(self):
+        return PermissionModel.query.all()
 
     def get_by_id(self, id):
         instance = self.session.query(PermissionModel).get(id)

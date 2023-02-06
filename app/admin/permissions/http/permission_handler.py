@@ -3,9 +3,10 @@ from flask import request
 
 # from app.core.util.get_all_functions import get_all_functions
 
+perm_service = PermissionService()
 
 def get_permissions():
-    return PermissionService.get_all_permissions()
+    return perm_service.get_all_permissions()
 
 
 def get_system_permissions():
@@ -30,7 +31,7 @@ def get_module_permissions():
 
 def register_permission():
     post_data = request.get_json()
-    return PermissionModel.register_permission(post_data)
+    return perm_service.register_permission(post_data)
 
 
 def update_permission():
